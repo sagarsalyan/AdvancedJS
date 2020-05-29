@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var error = () => {
+            throw new Error("Something hghg went wrong")
+        }
+        function clickk() {
+            console.log(error())
+        }
+        //----------------------------------------------------------------------
+
+        function myFunction() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo").value;
+            try {
+                if(x == "") throw new Error("empty");
+                if(isNaN(x)) throw "not a number";
+                x = Number(x);
+                if(x < 5) throw "too low";
+                if(x > 10) throw "too high";
+            }
+            catch(err) {
+                message.innerHTML = "Input is " + err;
+            }
+        }
+        //---------------------------------------------------------------
+        var range = () => {
+            
+            var num = 1;
+            try {
+            num.toPrecision(500);   // A number cannot have 500 significant digits
+            }
+            catch(err) {
+                document.getElementById("range").innerHTML = err.name;
+            }
+        }
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickk();">Click Me</button><br>
+    <label for="">-----------------------------------------------------------</label><br>
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p><br>
+    <label for="">--------------------------------------------------------------------</label><br>
+    <button onclick="range();">Range</button><br>
+    <p id="range"></p>
+</body>
+</html>

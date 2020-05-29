@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+
+</head>
+<body>
+    <div id='val'></div>
+    <script>
+        const pro = new Promise((resolve,reject) => {
+            var bool = true;
+            if(bool){
+                resolve('I stand to the promise');
+            }
+            else{
+                reject('I forgot the promise');
+            }
+        });
+        console.log(pro);
+        pro.then((message) => {
+            document.getElementById('val').innerHTML="<h1>"+message+"<h1>"
+        }).catch((message) => {
+            document.getElementById('val').innerHTML="<h1>"+message+"<h1>"
+        });
+    </script>
+</body>
+</html>

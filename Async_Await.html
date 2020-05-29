@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-Await</title>
+</head>
+<body>
+    <script>
+        //Async function returns Promise
+        //Await used inside Async function, it waits untile promise resolves
+        //Example 1
+        async function async1() {
+            return 1;
+        }
+        let data = async1()
+        data.then((res) => console.log(res))
+
+        //Example 2
+        async function async2() {
+
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("done!"), 5000)
+            });
+
+            let result = await  promise; // wait until the promise resolves (*)
+            // to know the difference remove 'await' keyword and check
+            alert(result) // "done!"
+        }
+
+        async2();
+
+    </script>
+</body>
+</html>

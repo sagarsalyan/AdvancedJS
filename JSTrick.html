@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSTrick</title>
+</head>
+<body>  
+    <script>
+        const foo = { name: 'Sagar', company:'PEOL', designation: 'Software Engineer' }
+        const bar = { name: 'Rakshi', company:'Obsessory', designation: 'Software Engineer' }
+        const baz = { name: 'Sunil', company:'PEOL', designation: 'Accountant' }
+
+        // Trick 1
+        console.log({ foo, bar, baz })
+        console.log('--------------------------------------------')
+
+        //Trick 2
+        console.log('%c Sagar','color:Green')
+        console.log('--------------------------------------------')
+
+        //Trick 3
+        console.log([foo,bar,baz])
+        console.table([foo,bar,baz])
+        console.log('--------------------------------------------')
+
+        //Trick 4
+        console.time('looper')
+        let i = 0
+        while( i < 10000000 ) { i++ }
+
+        console.timeEnd('looper')
+        console.log('--------------------------------------------')
+
+        //Trick 5
+        const bye = () => console.trace('Bye')
+        bye()
+        console.log('--------------------------------------------')
+
+        //Trick 6 Object Destructing
+        //Bad Code
+        function getBar(data){
+            return `Name:${data.name} Company:${data.company} Designation:${data.designation}`
+        }
+        var val = getBar(bar)
+        console.log(val)
+        
+
+        //Good Code
+        //1
+        function getFoo({name, company, designation}){
+            return `Name:${name} Company:${company} Designation:${designation}`
+        }
+        val = getFoo(foo)
+        console.log(val)
+
+        //Or
+        //2
+        function getBaz(data){
+            const {name, company, designation} = data;
+            return `Name:${name} Company:${company} Designation:${designation}`
+        }
+        val = getBaz(baz)
+        console.log(val)
+        console.log('--------------------------------------------')
+
+        //Trick 7 Using backticks in string
+        //1
+        let str = `Name:${foo.name} Company:${foo.company} Designation:${foo.designation}`;
+        console.log({str})
+        //2
+        const {name, company, designation} = bar;
+        str = `Name:${name} Company:${company} Designation:${designation}`
+        console.log({str})
+        console.log('--------------------------------------------')
+
+        //Trick 8
+        const horse = {
+            name:'Topher',
+            size:'large',
+            age:7
+        }
+        function horseAge(str, name, age){
+            const ageStr = age > 5 ? 'old' : 'young'
+            return `${str[0]}${name}${str[1]}${age}${str[2]}${ageStr}`
+        }
+        const bio = horseAge`The horse name is ${horse.name} and it is ${horse.age} year `
+        console.log(bio)
+        console.log('--------------------------------------------')
+
+        //Trick 9 Joining Object
+        const emp = {name: 'Sagar', designation: 'Software Engineer'}
+        const emp2 = {name: 'Rakshi', designation: 'Software Engineer'}
+        const emp3 = {name: 'Sunil', designation: 'Accountant'}
+        const salary = { gross: 15000, da: 1000, hra: 1500 }
+        //Bad
+        emp['gross']=salary.gross
+        emp['da']=salary.da
+        emp['hra']=salary.hra
+        console.log({emp})
+        //Good
+        //1
+        const det2 = Object.assign(emp2,salary)
+        console.log({det2})
+        //2
+        const det3 = {...emp3, ...salary}
+        console.log({det3})
+        
+        //Trick 10 Joining array or Pushing a list of items to array
+        let empList = ['Sagar', 'Rakshi']
+        console.log(empList)
+        //Bad(Two lines of code)
+        empList.push('Sunil')
+        empList.push('Shiva')
+        console.log(empList)
+        //Good
+        empList = [...empList, 'Sumathi', 'Bhaskar',] //Good practice to have comma at last
+        console.log(empList)
+        empList = ['Madhu', 'Naveen',...empList] //Unshift
+        console.log(empList)
+
+        //Trick 10 Array Loop
+        let orders = [100,39,78,90,52,76]
+        //Bad Loop
+        let total = 0
+        let withTax = []
+        let highValue = []
+        for(i = 0; i < orders.length; i++){
+
+            //reduce
+            total += orders[i]
+
+            //map
+            withTax.push(orders[i] * 1.1)
+
+            //filter
+            if(orders[i] > 50){
+                highValue.push(orders[i])
+            }
+        }
+        console.log({total,withTax,highValue})
+
+        total = 0
+        withTax = []
+        highValue = []
+        total = orders.reduce(((acc, cur) => acc + cur))
+        withTax = orders.map(v => v * 1.1)
+        highValue = orders.filter(v => v > 50 )
+
+        console.log({total,withTax,highValue})
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
