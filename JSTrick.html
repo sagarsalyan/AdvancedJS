@@ -149,7 +149,56 @@
 
         console.log({total,withTax,highValue})
 
+        console.log("------------------------------------------------------------------")
+        //High-Order function - functions that accept a function as an argument and return a function. Often, they are used to add to the functionality of a function.
+        const withLog = (fn) => {  
+            return (...args) => {  
+                console.log(`calling ${fn.name}`);  
+                return fn(...args);  
+            };  
+        };
 
+        const add = (a, b) => a + b;  
+        const addWithLogging = withLog(add);  
+        var totVal = addWithLogging(3, 4);  
+        //Output
+        // calling add  
+        // 7
+
+        console.log("------------------------------------------------------------------")
+
+        //Currying - Currying means breaking down a function that takes multiple arguments into one or multiple levels of higher-order functions.
+        // const add = (a, b) => a + b; //normal method
+
+        const addition = a => {
+            return b => {
+                return a + b;
+            };
+        };
+        addition(3)(4);  
+
+        console.log("------------------------------------------------------------------")
+        //Prototype - Prototype is basically a property of a JavaScript function. At each time we create a function in JavaScript, JavaScript engine adds an extra property called prototype to the created function. This prototype property is an object (called as prototype object) has a constructor property by default. This constructor property points back to the function object on which the prototype object is a property.
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        console.log(Person.prototype)
+        console.log(Person.prototype.constructor === Person)
+
+        Person.prototype.eat = function () {
+            console.log(`${this.name} is eating.`)
+        }
+        Person.prototype.sleep = function () {
+            console.log(`${this.name} is sleeping.`)
+        }
+        Person.prototype.walk =function () {
+            console.log(`${this.name} is walking.`)
+        }
+
+        const Sagar = new Person("sagar",23)
+        
 
 
 
