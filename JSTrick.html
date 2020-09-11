@@ -198,7 +198,71 @@
         }
 
         const Sagar = new Person("sagar",23)
-        
+
+        //Prototype - Inheritance
+        //1
+        var a = {
+            attr1: 'a1'
+        }
+        var b = {
+            attr2: 'a2'
+        }
+        b.__proto__ = a;
+        b.attr1 // 'a1'
+        a.attr1 = 'a000'; // Changing the content of an inherited object
+        b.attr1 // 'a000'
+        a.attr3 = 'a3' // Adding to the content of an inherited object
+        b.attr3 // 'a3'
+        delete a.attr1 // Deleting a content of an inherited object.
+        b.attr1 // undefined
+
+        //2
+        var a = {
+            attr1: 'a'
+        };
+        var b = {
+            __proto__: a,
+            attr2: 'b'
+        };
+        var c = {
+            __proto__: b,
+            attr3: 'c'
+        };
+        c.attr1 // 'a'
+
+        //3
+        //constructor
+        function Parent(name) {
+            this.name = name;
+        }
+        Parent.prototype.getName = function() {
+            return this.name;
+        };
+        var p = new Parent('myName');
+        // Happening behind the scenes
+        // p = {}; // The engine creates a new object
+        // Parent.call(p, 'myName'); // The engine uses the call to substitute the 'this' of the Parent function to p to run the code
+        // p.__proto__ = Parent.prototype; // Connects the prototype
+        // p.getName(); // 'myName'
+
+        //4
+        function Person(firstName, lastName, age){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        }
+        //Person class created
+        Person.prototype.getFullName = function(){
+        return this.firstName + " " + this.lastName;
+        }
+        // we have added getFullName method in Person’s prototype.
+        var person = new Person("pushpendu", "purkait", 25);
+        // It will create an instance of the Person class
+        person.hasOwnProperty("firstName");  // true
+        person.hasOwnProperty("getFullName");  // false
+        person.getFullName(); // pushpendu purkait
+        person.__proto__.hasOwnProperty("getFullName");  //true
+
 
 
 
