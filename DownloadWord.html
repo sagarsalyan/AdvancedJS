@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="source">
+        <div style="display: block;">
+            <div style="width:79%;display: inline-block;">
+                <center><h1>Analysis Form</h1></center>
+            </div>
+            <div style="width:20%;display: inline-block;">
+                <img src="images/kennalogo.jpg" width="100%" alt="">
+            </div>
+        </div>
+        <div style="display: block;font-size:30px;">
+            <div style="width:50%;display: inline-block;">
+                <label for="req">Requestor:</label>
+                <u>Something</u>
+            </div>
+            <div style="width:49%;display: inline-block;">
+                <label for="dat">Date:</label>
+                <u>Something</u>
+            </div>
+        </div>
+        <br><br>
+        <div style="display: block;font-size:30px;">
+            <div style="width:50%;display: inline-block;">
+                <label for="res">Contact for result:</label>
+                <u>Something</u>
+            </div>
+            <div style="width:49%;display: inline-block;">
+                <label for="dat">Sample description:</label>
+                <u>Something</u>
+            </div>
+        </div>
+        <br><br>
+        <div style="display: block;font-size:30px;">
+            <b><u><label for="">Physical Analysis</label></u></b>
+            <br>
+            <div style="display: flex;flex-wrap: wrap;">
+                <div style="width: 30%;display: inline-block;">
+                    <ul style="list-style-type: none;">
+                        <li><input type="checkbox" name="fsss" id="fsss" value="FSSS"><label>FSSS</label></li>
+                        <li><input type="checkbox" name="labfs" id="labfs" value="FSSS"><label>Lab Milled FSS</label></li>
+                        <li><input type="checkbox" id="mal" value="Malvern PSD"><label>Malvern PSD</label></li>
+                        <li><input type="checkbox" id="hal" value="Hall Flow"><label>Hall Flow</label></li>
+                    </ul>
+                </div>
+                <div style="width: 30%;display: inline-block;">
+                    <ul style="list-style-type: none;">
+                        <li><input type="checkbox" id="app" value="App Density"><label>App Density</label></li>
+                        <li><input type="checkbox" id="tap" value="Tap Density"><label>Tap Density</label></li>
+                        <li><input type="checkbox" id="scot" value="Scott Density"><label>Scott Density</label></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li style="display: inline-block;"><input type="checkbox" id="scrtest" value="Screen Test"><label>Screen test</label></li>
+                    <li style="display: inline-block;"><input type="checkbox" id="brush" value="Brush"><label>Brush</label></li>
+                    <li style="display: inline-block;"><input type="checkbox" id="rottaped" value="Rottaped"><label>Rottaped</label></li>
+                </ul>
+            </div>
+            <br>
+            <div>
+                <label for="">Mesh size(s):</label>
+                <u>something</u>
+            </div>
+            <br>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li style="display: inline-block;"><input type="checkbox" id="sem" value="SEM Magnification"><label>SEM Magnification:</label></li>
+                    <li style="display: inline-block;"><u>something</u></li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li style="display: inline-block;"><input type="checkbox" id="eds" value="EDS"><label>EDS</label></li>
+                    <li style="display: inline-block;"><input type="checkbox" id="xraym" value="X-Ray Map"><label>X-ray Map</label></li>
+                    <li style="display: inline-block;"><input type="checkbox" id="xrayl" value="X-Ray Line"><label>X-ray Line</label></li>
+                </ul>
+            </div>
+            <div>
+                <b><u><label for="">Material Lab</label></u></b>
+                <br>
+                <div>
+                    <input type="checkbox" id="atest" value="Abrasive Test"><label>Abrasive Test</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="kic" value="KIC Short read"><label>KIC Short Road</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="stest" value="Sintering test"><label>Sintering test</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="temp">Temp:</label><u>something</u>
+                    <br>
+                    <input type="checkbox" id="density" value="Density"><label>Density</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="lsf" value="LSF"><label>LSF</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="tga" value="TGA/DSC"><label>TGA/DSC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" id="digmic" value="Digital Micrography"><label>Digital Micrography</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="ms" value="MS"><label>MS(%)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="trs" value="TRS"><label>TRS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" id="hard" value="Hardness"><label>Hardness</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="op" value="Digital Micrography"><label>Optical Micrography</label>&nbsp;
+                    <input type="checkbox" id="use" value="Use test"><label>Use test:</label>
+                    <input type="checkbox" id="bm" value="Bill Mill"><label>Bill Mill</label>
+                    <input type="checkbox" id="vm" value="Vibe Mill"><label>Vibe Mill</label>
+                    <input type="checkbox" id="am" value="Attritor Mill"><label>Attritor Mill</label>
+                    <br>
+                    <input type="checkbox" id="hc" value="HC"><label>HC</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="pc" value="Pressing Curve"><label>Pressing Curve</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="vsl" value="VSL"><label>VSL</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <br>
+                <div>
+                    <b><u><label for="">Chemical Analysis</label></u></b>
+                    <br>
+                    <input type="checkbox" id="wty" value="W-Typical"><label>W-Typical</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="wall" value="W-All elements"><label>W-All elements</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="hevmet" value="Heavy Metal"><label>Heavy Metal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="bl" value="BL Scrapping"><label>BL Scrapping</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" id="wcty" value="WC-Typical"><label>WC-Typical</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="wcall" value="WC-All elements"><label>WC-All elements</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="fs" value="FS"><label>FS</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" id="graded" value="Graded PWD"><label>Graded PWD</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="tspray" value="Thermal Spray"><label>Thermal Spray</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="spl" value="Special"><label>Special</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" id="apt" value="APT/BTO/YTO"><label>APT/BTO/YTO</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="raw" value="Raw Material Analysis including W"><label>Raw Material Analysis including W</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="ore" value="ORE"><label>ORE</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" id="mois" value="Moisture"><label>Moisture</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <br>
+                <div>
+                    <u><b><label for="">Comments</label></b></u><br>
+                    <textarea name="" id="" cols="100" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button onclick="downloadjQ()">Download</button>
+    </div>
+    <script>
+        function download(){
+            debugger;
+            var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+            var footer = "</body></html>";
+            var sourceHTML = header+document.getElementById("source").innerHTML+footer;
+            
+            var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+            var fileDownload = document.createElement("a");
+            document.body.appendChild(fileDownload);
+            fileDownload.href = source;
+            fileDownload.download = 'document.doc';
+            fileDownload.click();
+            document.body.removeChild(fileDownload);
+        }
+        function downloadjQ(){
+            jQuery(document).ready(function($) {
+                    $("#source").wordExport();
+            });
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="FileSaver.js"></script>
+    <script src="jquery.wordexport.js"></script>
+
+    
+</body>
+</html>
