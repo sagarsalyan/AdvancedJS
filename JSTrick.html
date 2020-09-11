@@ -355,6 +355,28 @@
 
         const Sagar = new Person("sagar",23)
 
+        //IIFE - Immediately Invoked Function Expression
+        // syntax
+        //    (function(){
+                //...
+        //    })();
+        //
+        const calculator = (function () {
+            function add(a, b) {
+                return a + b;
+            }
+
+            function multiply(a, b) {
+                return a * b;
+            }
+            return {
+                add: add,
+                multiply: multiply
+            }
+        })();
+        let result = calculator.add(10, 20); 
+        console.log(result); // 30
+
         //Prototype - Inheritance
         //1
         var a = {
