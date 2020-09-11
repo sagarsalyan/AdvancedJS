@@ -183,6 +183,100 @@
 
         isNaN("Hello");       // returns true isNotaNumber
 
+        console.log("-------------------------------------------------------------")
+        //Inhertance
+        class Person  {
+            eat() {
+                console.log('I am eating');
+            }
+            breathe(){
+                console.log('I am breathing');
+            }    
+            swim(){
+                console.log('I am swimming');
+            } 
+        }
+        class Magician  extends Person{
+            trick() {
+                console.log('I am doing a trick');
+            }
+        }
+        let liv= new Magician();
+        let harry = new Magician();
+        //Liv can:
+        liv.eat();
+        liv.breathe();
+        liv.swim();
+        liv.trick();
+        //I am eating
+        //I am breathing
+        //I am swimming
+        //I am doing a trick
+        //Harry can:
+        harry.eat();
+        harry.breathe();
+        harry.swim();
+        harry.trick();
+        //I am eating
+        //I am breathing
+        //I am swimming
+        //I am doing a trick
+
+        console.log("---------------------------------------------------------------")
+
+        //Composition
+        const eat = function () {
+            return {
+                eat: () => { console.log('I am eating'); }
+            }
+        }
+        const breathe = function () {
+            return {
+                breathe: () => { console.log('I am breathing'); }
+            }
+        }
+        const swim = function () {
+            return {
+                swim: () => { console.log('I am swimming'); }
+            }
+        }
+        const trick = function () {
+            return {
+                trick: () => { console.log('I am doing a trick'); }
+            }
+        }
+        const superMagician = ()=> {
+        return Object.assign(
+            {},
+            eat(),
+            breathe(),
+            trick()
+        );
+        }
+        const noviceMagician = () => {
+        return Object.assign(
+            {},
+            eat(),
+            breathe(),
+            swim()
+        );
+        }
+        //Now, Harry can’t swim, and Liv can’t do tricks.
+        let harry = superMagician();
+        harry.eat();
+        harry.breathe();
+        harry.trick();
+        //I am eating
+        //I am breathing
+        //I am doing a trick
+        let liv = noviceMagician();
+        harry.eat();
+        harry.breathe();
+        harry.swim();
+        //I am eating
+        //I am breathing
+        //I am swimming
+
         console.log("------------------------------------------------------------------")
         //High-Order function - functions that accept a function as an argument and return a function. Often, they are used to add to the functionality of a function.
         const withLog = (fn) => {  
