@@ -496,6 +496,43 @@
         counter.decrement();
         alert(counter.value()); // 1
 
+        console.log("---------------------------------------------------------------")
+        //.call(), .apply(), .bind()
+        //Demo with javascript .call()
+        //The first parameter in call() method sets the "this" value, which is the object, on which the function is invoked upon. In this case, it's the "obj" object above.
+
+        var obj = {name:"Niladri"};
+
+        var greeting = function(a,b,c){
+            return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+        };
+        var res = greeting.call(obj,"Newtown","KOLKATA","WB")
+        console.log(res);
+        // returns output as welcome Niladri to Newtown KOLKATA in WB
+
+        //Demo with javascript .apply()
+        var args = ["Newtown","KOLKATA","WB"];  
+        console.log("Output using .apply() below ")
+        console.log(greeting.apply(obj,args));
+        // returns output as welcome Niladri to Newtown KOLKATA in WB
+        //he only difference of apply() with the call() method is that the second parameter of the apply() method accepts the arguments to the actual function as an array.
+
+        //Demo with javascript .bind()
+        //creates a bound function that has same body and parameters 
+        var bound = greeting.bind(obj); 
+
+
+        console.dir(bound); ///returns a function
+
+        console.log("Output using .bind() below ");
+
+        console.log(bound("Newtown","KOLKATA","WB")); //call the bound function
+
+        /* the output will be 
+        Output using .bind() below
+        welcome Niladri to Newtown KOLKATA in WB */
+        //In the above code sample for bind() we are returning a bound function with the context which will be invoked later. We can see the bound function in the console as below .
+
 
 
 
