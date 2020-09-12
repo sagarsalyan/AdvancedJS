@@ -262,17 +262,17 @@
         );
         }
         //Now, Harry can’t swim, and Liv can’t do tricks.
-        let harry = superMagician();
+        harry = superMagician();
         harry.eat();
         harry.breathe();
         harry.trick();
         //I am eating
         //I am breathing
         //I am doing a trick
-        let liv = noviceMagician();
-        harry.eat();
-        harry.breathe();
-        harry.swim();
+        liv = noviceMagician();
+        liv.eat();
+        liv.breathe();
+        liv.swim();
         //I am eating
         //I am breathing
         //I am swimming
@@ -336,24 +336,24 @@
         console.log("------------------------------------------------------------------")
         //Prototype - Prototype is basically a property of a JavaScript function. At each time we create a function in JavaScript, JavaScript engine adds an extra property called prototype to the created function. This prototype property is an object (called as prototype object) has a constructor property by default. This constructor property points back to the function object on which the prototype object is a property.
 
-        function Person(name, age) {
+        function Person2(name, age) {
             this.name = name;
             this.age = age;
         }
-        console.log(Person.prototype)
-        console.log(Person.prototype.constructor === Person)
+        console.log(Person2.prototype)
+        console.log(Person2.prototype.constructor === Person2)
 
-        Person.prototype.eat = function () {
+        Person2.prototype.eat = function () {
             console.log(`${this.name} is eating.`)
         }
-        Person.prototype.sleep = function () {
+        Person2.prototype.sleep = function () {
             console.log(`${this.name} is sleeping.`)
         }
-        Person.prototype.walk =function () {
+        Person2.prototype.walk =function () {
             console.log(`${this.name} is walking.`)
         }
 
-        const Sagar = new Person("sagar",23)
+        const Sagar = new Person2("sagar",23)
 
         //IIFE - Immediately Invoked Function Expression
         // syntax
@@ -424,17 +424,17 @@
         // p.getName(); // 'myName'
 
         //4
-        function Person(firstName, lastName, age){
+        function Person3(firstName, lastName, age){
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
         }
         //Person class created
-        Person.prototype.getFullName = function(){
+        Person3.prototype.getFullName = function(){
         return this.firstName + " " + this.lastName;
         }
         // we have added getFullName method in Person’s prototype.
-        var person = new Person("pushpendu", "purkait", 25);
+        var person = new Person3("pushpendu", "purkait", 25);
         // It will create an instance of the Person class
         person.hasOwnProperty("firstName");  // true
         person.hasOwnProperty("getFullName");  // false
@@ -445,14 +445,14 @@
 
         //Closure function
         //1
-        var add = (function () {
+        var add2 = (function () {
             var counter = 0;
             return function () {counter += 1; return counter}
         })();
 
-        add();
-        add();
-        add();
+        add2();
+        add2();
+        add2();
         // the counter is now 3
 
         //2
