@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="fuse.js"></script>
+    <title>Document</title>
+</head>
+<body style="width: 100%;">
+    
+    <script>
+        var data = [
+  {
+    "title": "Old Man's War",
+    "author": "John Scalzi",
+    "tags": ["fiction"]
+  },
+  {
+    "title": "The Lock Artist",
+    "author": "Steve",
+    "tags": ["thriller"]
+  }
+]
+
+const options = {
+  includeScore: true,
+  // Search in `author` and in `tags` array
+  keys: ['title']
+}
+
+const fuse = new Fuse(data, options)
+
+const result = fuse.search('Lock Th')
+    </script>
+    
+   
+</body>
+</html>
